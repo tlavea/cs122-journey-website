@@ -1,7 +1,7 @@
 emailjs.init("wbxjhlvzO3XQ4PofF");
 
 // validation form
-function checkCredentials() {
+function checkCredentials(action) {
     var email = document.getElementById('email').value;
     var password = document.getElementById('password').value;
 
@@ -18,7 +18,7 @@ function checkCredentials() {
     }
 
     // Validate that the email is legitimate
-    if (!email.includes('@') || !email.includes('.com')) {
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
         alert("Please enter a valid email address.");
         return;
     }
@@ -33,20 +33,28 @@ function checkCredentials() {
         return;
     }
 
-    // Check if the user exists in localStorage
+    // checks for login vs register
     var storedEmail = localStorage.getItem('email');
     var storedPassword = localStorage.getItem('password');
 
-    if (storedEmail === email && storedPassword === password) {
-        alert('Login successful!');
-        redirectToHiddenPage();
-    } else {
-        alert('User created successfully!');
-        // Save the email and password in localStorage
-        localStorage.setItem('email', email);
-        localStorage.setItem('password', password);
-        saveToTextFile(email, password);
-        redirectToHiddenPage();
+    if (action === 'login') {
+        if (storedEmail === email && storedPassword === password) {
+            alert('Login successful!');
+            redirectToHiddenPage();
+        } else {
+            alert('Invalid email or password.');
+        }
+    } else if (action === 'register') {
+        if (storedEmail === email) {
+            alert('An account with this email already exists.');
+        } else {
+            alert('User created successfully!');
+            // Save the email and password in localStorage
+            localStorage.setItem('email', email);
+            localStorage.setItem('password', password);
+            saveToTextFile(email, password);
+            redirectToHiddenPage();
+        }
     }
 }
 
@@ -66,7 +74,7 @@ async function submitComment() {
         return;
     }
 
-    if (!email.includes('@') || !email.includes('.com') || email.includes(" ")) {
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
         alert("Please enter a valid email address.");
         return;
     }
@@ -96,6 +104,3 @@ async function submitComment() {
     }
 }
 
-function saveToTextFile(email, password) {
-    // figuring out saving to text
-}
