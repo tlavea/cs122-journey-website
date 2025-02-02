@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.1/dist/xlsx.full.min.js"></script> <!-- Include XLSX library -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script> <!-- Include EmailJS library -->
+    <script type="text/javascript" src="js/script.js"></script>
+    <title>Tevin's Website</title>
+    <link rel="stylesheet" type="text/css" href="css/stylez.css">
+    <link rel="stylesheet" type="text/css" href="css/media.css">
+</head>
+<body>
+
+    <div class="header">
+        <header>
+            <p>WebSite</p>
+        </header>
+    </div>
+
+    <div class="menu">
+        <span></span>
+    </div>
+
+    <nav class="navi">
+        <ul class="navi-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="register.html">Account</a></li>
+            <li><a href="service.html">Service</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="contentbox">
+        <div class="contentx">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d26400.69007155596!2d-118.4780777011175!3d34.195272404126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sstarbucks%20van%20nuys!5e0!3m2!1sen!2sus!4v1738434839128!5m2!1sen!2sus"
+                width="500" height="500"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <p>Located at: 7007 Sepulveda Blvd</p>
+        </div>
+    </div>
+
+    <div class="contentbox">
+        <div class="container">
+            <div class="contentx">
+                <h2>Send us a comment!</h2>
+                <input type="text" id="firstName" placeholder="First Name" required>
+                <br>
+                <input type="email" id="commentEmail" placeholder="Email" required>
+                <br>
+                <textarea id="comment" placeholder="Enter your comments here..." rows="4" cols="50"></textarea>
+                <br>
+                <button onclick="submitComment()">Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/email.js"></script>
+
+</body>
+</html>
