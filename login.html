@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.1/dist/xlsx.full.min.js"></script> <!-- Include XLSX library -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script> <!-- Include EmailJS library -->
+    <script type="text/javascript" src="js/script.js"></script>
+    <title>Tevin's Website</title>
+    <link rel="stylesheet" type="text/css" href="css/stylez.css">
+    <link rel="stylesheet" type="text/css" href="css/media.css">
+</head>
+<body>
+
+    <div class="header">
+        <header>
+            <p>WebSite</p>
+        </header>
+    </div>
+
+    <div class="menu">
+        <span></span>
+    </div>
+
+    <nav class="navi">
+        <ul class="navi-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="register.html" class="active">Account</a></li>
+            <li><a href="service.html">Service</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="contentbox">
+        <div class="container">
+            <div class="contentx">
+                <h2>Login</h2>
+                <input type="email" id="email" placeholder="Email" required>
+                <br>
+                <input type="password" id="password" placeholder="Password" required>
+                <br>
+                <button onclick="checkCredentials('login')">Login</button>
+                <br>
+                <h5><a href="register.html">[Register]</a></h5>
+                <br><br>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/email.js"></script>
+
+</body>
+</html>
